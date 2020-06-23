@@ -1,0 +1,307 @@
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[UTF8]{ctex}
+\setCJKfamilyfont{adobesong}{Adobe Song Std}
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+
+% what is your name?
+\newcommand{\myname}{林小军}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+            \setlength{\parskip}{0em}
+            \setlength{\itemsep}{\listitemspace}
+            \setlength{\parsep}{\listitemspace}}}
+    {\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {health policy, health economics, health system},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    \raggedright
+
+    % display name as the document title
+    \namefont{\myname}
+
+    % contact info
+    \vspace{1em}
+    \begin{minipage}[t]{0.68\textwidth}
+    	助理研究员，四川大学华西公共卫生学院卫生政策与管理学系\\
+        通讯地址：{四川省成都市人民南路三段17号} \\
+        邮箱: \href{mailto:linxiaojun@scu.edu.cn}{linxiaojun@scu.edu.cn}  \space  相关网站: \href{https://scholar.google.com/citations?user=ZBGYTowAAAAJ&hl=en}{Google Scholar}
+    \end{minipage}
+    
+    \vspace{0.5em}
+
+
+    \section*{教育经历}
+
+    \begin{tablist}
+
+        \item[2014-2019] \tab 华中科技大学，社会医学与卫生事业管理， 管理学博士
+        \item[2010-2014] \tab 华中科技大学，公共事业管理， 管理学学士
+
+    \end{tablist}
+
+
+
+    \section*{工作经历}
+
+    \begin{tablist}
+
+        \item[2019--]   \tab 四川大学华西公共卫生学院，专职博士后                       
+
+    \end{tablist}
+
+
+
+    \section*{研究方向 }
+
+    \begin{itemize}
+
+        \item 医院市场结构；医疗服务质量；效率评价
+
+    \end{itemize}
+
+
+
+    \section*{学术论文}
+
+    \subsection*{英文同行评议期刊论文}
+
+    \begin{tablist}
+    	
+    	\item[2020] \tab Cai, M., Liu, E., Zhang, R., \textbf{Lin, X.},  Rigdon, S.E., Qian, Z., Belue, R., Chang, J.J.\enquote{Comparing the Performance of Charlson and Elixhauser Comorbidity Indices to Predict In-Hospital Mortality Among a Chinese Population. } \textit{Clinical Epidemiology} 12, 307—316. doi: \href{https://doi.org/10.2147/CLEP.S241610}{10.2147/CLEP.S241610}
+    	
+    	\item[2019] \tab Ni, Z.,  \textbf{Lin, X.}, Wang, Y., Jiang, T., Tao, H.\enquote{Hospital volume and outcomes for inpatients with acute myocardial infarction in Shanxi, China: A cross‐sectional study.} \textit{The International Journal of Health Planning and Management} 34(4), 1195–1204. doi: \href{https://doi.org/10.1002/hpm.2787}{10.1002/hpm.2787}
+    	
+    	\item[2018] \tab \textbf{Lin, X.}, Cai, M., Fu, Q., He, K., Jiang, T., Lu, W., Ni, Z. and Tao, H. \enquote{Does hospital competition harm inpatient quality? Empirical evidence from Shanxi, China.} \textit{International Journal of Environmental Research and Public Health} 15 (10), 2283. doi:\href{https://doi.org/10.3390/ijerph15102283}{10.3390/ijerph15102283}
+    	
+    	\item[2018] \tab Xu, C., Fu, Q., Tao, H., \textbf{Lin, X.}, Wang, M., Xia, S., Xiong, H. \enquote{Effect of Cesarean Section on the Severity of Postpartum Hemorrhage in Chinese Women: The Shanxi Study.} \textit{Current Medical Science} 38(4), 618–625. doi:\href{https://doi.org/10.1007/s11596-018-1922-1}{10.1007/s11596-018-1922-1}
+    	
+    	 \item[2018] \tab Cai, M., Liu, E., Tao, H., Qian, Z., Fu, Q.J., \textbf{Lin, X.}, Wang, M., Xu, C., Ni, Z. \enquote{Does a medical consortium influence health outcomes of hospitalized cancer patients? An integrated care model in Shanxi, China.} \textit{International Journal of Integrated Care}  18(2), 1–10. doi:\href{https://doi.org/10.5334/ijic.3588}{10.5334/ijic.3588}
+    	 
+		\item[2018] \tab Wang, M., Han, X., Fang, H., Xu, C., \textbf{Lin, X.}, Xia, S., Yu, W., He, J., Jiang, S., Tao, H. \enquote{Impact of Health Education on Knowledge and Behaviors toward Infectious Diseases among Students in Gansu Province, China.} \textit{BioMed Research International}, 6397340. doi:\href{https://doi.org/10.1155/2018/6397340}{10.1155/2018/6397340}
+		
+		\item[2018] \tab Cai, M., Liu, E., Tao, H., Qian, Z., \textbf{Lin, X.}, Cheng, Z. \enquote{Does Level of Hospital Matter? A Study of Mortality of Acute Myocardial Infarction Patients in Shanxi, China.} \textit{American Journal of Medical Quality}  33(2), 185–192. doi:\href{https://doi.org/10.1177/1062860617708608}{10.1177/1062860617708608}
+		
+		\item[2017] \tab  \textbf{Lin, X.}, Cai, M., Tao, H., Liu, E., Cheng, Z., Xu, C., Wang, M., Xia, S., Jiang, T. \enquote{Insurance status, inhospital mortality and length of stay in hospitalised patients in Shanxi, China: a cross-sectional study.} \textit{BMJ Open}  7(7), e015884. doi:\href{https://doi.org/10.1136/bmjopen-2017-015884}{10.1136/bmjopen-2017-015884}
+		   
+		\item[2017] \tab Wang, M., Fang, H., Tao, H., Cheng, Z., \textbf{Lin, X.}, Cai, M., Xu, C., Jiang, S. \enquote{Bootstrapping data envelopment analysis of efficiency and productivity of county public hospitals in Eastern, Central, and Western China after the public hospital reform.} \textit{Current Medical Science}  37(5), 681-692. doi:\href{https://doi.org/10.1007/s11596-017-1789-6}{10.1007/s11596-017-1789-6}
+    	 
+		\item[2016] \tab \textbf{Lin, X.}, Tao, H., Cai, M., Liao, A., Cheng, Z., Lin, H.\enquote{ A Systematic Review and Meta-Analysis of the Relationship Between Hospital Volume and the Outcomes of Percutaneous Coronary Intervention.} \textit{Medicine}  95(5), e2687. doi:\href{https://doi.org/10.1097/MD.0000000000002687}{10.1097/MD.0000000000002687}
+				
+		\item[2016] \tab Cheng, Z., Cai, M., Tao, H., He, Z., \textbf{Lin, X.}, Lin, H., Zuo, Y. \enquote{ Efficiency and productivity measurement of rural township hospitals in China: a bootstrapping data envelopment analysis.} \textit{BMJ Open}  6(11), e011911. doi:\href{https://doi.org/10.1136/bmjopen-2016-011911}{10.1136/bmjopen-2016-011911}
+		
+		\item[2015] \tab Cheng, Z., Tao, H., Cai, M., Lin, H., \textbf{Lin, X.}, Shu, Q., Zhang, R.N.\enquote{ Technical efficiency and productivity of Chinese county hospitals: An exploratory study in Henan province, China.} \textit{BMJ Open}  5(9), e007267. doi:\href{https://doi.org/10.1136/bmjopen-2014-007267}{10.1136/bmjopen-2014-007267}
+
+ \end{tablist}
+
+\subsection*{中文同行评议期刊文章}
+    \begin{tablist}
+
+		\item[2020]  \tab  许昌, 庄俊汉, 傅强, 程兆辉, 蔡苗, \textbf{林小军}, 罗斌, 陈芸, 钟婉婷. 基于省级DRG平台的死亡类与非计划重返类指标评价应用研究.\emph{中华医院管理杂志}, 36(2):117-121. \href{http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zhyygl202002004}{Link}\\[5pt]
+		
+		\item[2019]  \tab  熊昊{\CJKfamily{adobesong} 祾}, 路伟, 许昌, \textbf{林小军}, 黄亦恬, 罗斌, 郭志武, 陶红兵. 病案首页数据质控的实践.\emph{中国卫生质量管理}, 26(4):5-8. \href{https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2019&filename=WSJG201904005&v=MzE4MzVUcldNMUZyQ1VSN3FmWWVSc0ZpRGdVTHpNTWo3QmFiRzRIOWpNcTQ5RllZUjhlWDFMdXhZUzdEaDFUM3E=}{Link}\\[5pt]
+		
+		\item[2019]  \tab  江恬雨, 黄亦恬, 施楠,  \textbf{林小军}, 倪紫菱, 陶红兵. 基于DEA的基层医疗卫生机构效率评价研究及其思考.\emph{中国医院}, 23(5):32-36. \href{https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2019&filename=ZGYU201905010&v=MjgyNDZxZlllUnNGaURnV3JySVB5clNlN0c0SDlqTXFvOUVaSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUjc=}{Link}\\[5pt]
+
+		\item[2019]  \tab  江恬雨, 陶红兵, 路伟, 黄亦恬, 施楠, \textbf{林小军}. 山西省三级综合公立医院运行效率评价研究——基于Bootstrap-Malmquist模型.\emph{中国医院管理}, 39(2):34-36. \href{https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=YYGL201902016&v=MDYyNDJUTVlyRzRIOWpNclk5RVlvUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSN3FmWWVSc0Z5bm1VcjdQUEQ=}{Link}\\[5pt]
+		
+		\item[2018]  \tab  施楠, 陶红兵, 黄亦恬, 江恬雨, 许昌, \textbf{林小军}.基于风险调整的三级综合医院剖宫产率评价. \emph{中华医院管理杂志},34(12):1017-1021. \href{http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zhyygl201812011}{Link} \\[5pt]
+
+		\item[2018]  \tab  黄亦恬, 陶红兵, 江恬雨. 施楠, \textbf{林小军}, 王曼丽, 喻文菡. 医疗联合体实现条件与关键问题探讨. \emph{中国医院管理},37(9),22-24. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2018&filename=YYGL201809005&v=MjIxMjdlWnVadEZpRGxWNzNPUERUTVlyRzRIOW5NcG85RllZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTEs=}{Link} \\[5pt]
+
+		\item[2017]  \tab  蔡苗, 陶红兵, Echu Liu, 程兆辉, \textbf{林小军}. 市场竞争对医院技术效率的影响——基于河南省和江苏省的实证研究. \emph{中国医院管理},37(6),22-24. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2017&filename=YYGL201706012&v=MzEzMTREbFZMdkFQRFRNWXJHNEg5Yk1xWTlFWm9SOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMS2VadVp0Rmk=}{Link}\\[5pt]
+
+		\item[2017]  \tab  何金露, 陶红兵, \textbf{林小军}, 肖婷, 蔡苗. 不同所有制医院医疗质量差异比较与思考. \emph{中国卫生质量管理},24(4),18-20. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2017&filename=WSJG201704010&v=MTU5NzM0OUVaSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxLZVp1WnRGaURtVTcvTU1qN0JhYkc0SDliTXE=}{Link}\\[5pt]
+
+		\item[2017]  \tab 夏述旭, 陶红兵, 都丽婷, 蔡苗, \textbf{林小军}, 林海锋. “互联网+” 背景下移动医疗质量与安全问题分析及对策研究. \emph{中国卫生质量管理},24(3),23-26. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2017&filename=WSJG201703030&v=MjQwMTVHWklSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMS2VadVp0RmlEbVViL01NajdCYWJHNEg5Yk1ySTk=}{Link}\\[5pt]
+
+		\item[2017]  \tab  喻文菡, 陶红兵, \textbf{林小军}, 王曼丽. 医护人员工作负荷与医疗质量和安全的相关性探讨. \emph{中国卫生质量管理},24(1),82-85. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2017&filename=WSJG201701013&v=MDI5NThSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMS2VadVp0RmlEbVY3M09NajdCYWJHNEg5Yk1ybzlFWjQ=}{Link}\\[5pt]
+
+		
+		\item[2016] \tab \textbf{林小军}, 陶红兵. 医院服务量与医疗质量的相关性研究及其思考. \emph{中华医院管理},32(2),108-110. \href{http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zhyygl201602010}{Link}\\[5pt]
+
+		\item[2016] \tab \textbf{林小军}, 陶红兵, 张士靖, 程兆辉, 蔡苗, 刘海通, 林海锋. 医院效率研究演进路径可视化分析. \emph{中国医院管理},36(4),27-29. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2016&filename=YYGL201604015&v=MjM5ODRSTEtlWnVadEZpRG5VNy9MUERUTVlyRzRIOWZNcTQ5RVlZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1U=}{Link}\\[5pt]
+
+		\item[2016]  \tab  张潘, 陶红兵,  \textbf{林小军}, 蔡苗. 我国医疗联合体的质量与安全现状及对策探讨. \emph{中国医院管理},36(11),52-54. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2016&filename=YYGL201611027&v=MjM5Mjl1WnNGaXZtVTcvS1BEVE1Zckc0SDlmTnJvOUhZNFI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxLZVo=}{Link}\\[5pt]
+
+		\item[2016]  \tab  林海锋, 陶红兵, 程兆辉, \textbf{林小军}, 蔡苗. 河南部分县级中医院的医疗资源利用效率及其影响因素分析. \emph{中华医院管理},32(2),117-120. \href{http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zhyygl201602013}{Link}\\[5pt]
+
+		\item[2015]  \tab  林海锋, 陶红兵, 程兆辉, 蔡苗, \textbf{林小军}. 武汉地区医院产科资源利用效率及影响因素研究. \emph{中国医疗管理科学},5(5),9-13. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2015&filename=YLGL201505004&v=MjkxODIxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxLZVp1WnNGaXZtVkx2QVBDSE1Zckc0SDlUTXFvOUZZSVI4ZVg=}{Link}\\[5pt]
+		
+		\item[2014]  \tab  \textbf{林小军}, 陶红兵. 国内外医疗安全管理现状及其差异分析. \emph{中国医疗管理科学},4(1),53–57. \href{https://kns.cnki.net/kcms/detail/detail.aspx?filename=YLGL201401019&dbcode=CJFQ&dbname=CJFD2014&v=}{Link}\\[5pt]
+
+		\item[2013]  \tab  蔡苗, 徐小兵, 蔡海洋, 常瑞, \textbf{林小军}, 黄艳然. 医疗不良事件识别途径及干预策略. \emph{医学与社会},26(9),20–22. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDHIS2&filename=YXSH201309007&v=MDAwNDFyQ1VSTEtlWnVac0Zpdm1XcnZOUERYWVpyRzRIOUxNcG85Rlk0UjhlWDFMdXhZUzdEaDFUM3FUcldNMUY=}{Link}\\[5pt]
+
+		\item[2013]  \tab  蔡苗, 陶红兵, \textbf{林小军}, 徐小兵, 蔡海洋, 陈飞翔. 阻碍医护人员报告医疗不良事件的 影响因素分析. \emph{中国卫生质量管理},20(5),41-43. \href{http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDHIS2&filename=WSJG201305024&v=Mjc4MDIxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxLZVp1WnNGaXZuVXJ6Tk1qN0JhYkc0SDlMTXFvOUhZSVI4ZVg=}{Link}\\	
+
+ \end{tablist}
+
+ 
+\section*{学术会议}
+
+    \subsection*{口头报告}
+
+    \begin{tablist}
+    
+    	 \item[2019] \tab Lin, X. \enquote{The Impact of Competition on Process of Care for Patients with Pneumonia: Evidence from Guizhou, China.}  2019 Health Management and Medicine Youth Forum. Chengdu, China. Oct 19--20.
+		  
+		  \item[2019] \tab Lin, X. \enquote{Does the medical consortium reform improve hospital efficiency? Evidence from secondary general hospitals in Shanxi, China, 2013-2017.} . 4\textsuperscript{th} Westlake Youth Form, Hangzhou. June 10--13. 
+		         
+        \item[2019] \tab Lin, X. \enquote{Does the medical consortium reform improve hospital efficiency? Evidence from secondary general hospitals in Shanxi, China, 2013-2017.}  1\textsuperscript{st} Health Economics and Policy Academic Forum. Beijing, China. Mar 30--31.
+        		
+    \end{tablist}
+    
+    \subsection*{会议摘要}
+
+    \begin{tablist}
+        
+        \item[2018] \tab Lin, X., Jiang, T., He, K., Lu, W., Ni, Z., Tao, H. \enquote{Exploring the effect of weekend admissions to hospital on health outcomes of inpatients with acute myocardial infarction in Shanxi, China: a longitudinal study.} . 2018 Lancet-CAMS Health Summit, Beijing, China. Oct 30--31. \href{https://doi.org/10.1016/s0140-6736(18)32648-5}{https://doi.org/10.1016/s0140-6736(18)32648-5}
+
+		\item[2016] \tab Lin, X., Tao, H., Cai, M., Cheng, Z., Wang, M., Xu, C., Lin, H., Jin, L. \enquote{Health insurance and quality and efficiency of medical care for patients with acute myocardial infraction in tertiary hospitals in Shanxi, China: a retrospective study.} . 2016 Lancet-CAMS Health Summit, Beijing, China. Oct 30--31.  \href{https://doi.org/10.1016/s0140-6736(16)31997-3}{https://doi.org/10.1016/s0140-6736(16)31997-3 }            
+  
+    \end{tablist}
+    
+   
+   
+\section*{荣誉与获奖}
+
+    \begin{tablist}
+      
+        \item[2018] \tab  湖北省科技厅  \space \textit{湖北省科技进步二等奖 (个人排名第八)}
+        \item[2017] \tab  华中科技大学  \space \textit{知行优秀三等奖学金}
+        \item[2016] \tab 华中科技大学  \space \textit{研究生国家奖学金}
+        \item[2016] \tab 华中科技大学  \space \textit{校三好学生}
+        \item[2014] \tab 华中科技大学  \space \textit{优秀本科毕业生}
+        \item[2014] \tab 华中科技大学  \space \textit{国家励志奖学金}
+        \item[2012] \tab 华中科技大学  \space \textit{校三好学生}
+        \item[2011] \tab 华中科技大学   \space \textit{国家励志奖学金}
+
+     \end{tablist}
+
+    %\subsection*{Grants and Fellowships}
+
+    %\begin{tablist}
+
+        %\item[2020] \tab Connections Between Built Environments, Policy, and Public Health (\$100,000 + second year option). The Public Good Projects research grant. PI.       
+        
+   % \end{tablist}
+
+   
+\section*{服务与活动}
+
+    \subsection*{期刊审稿}
+
+    \begin{tablist}
+    
+    	 \item[2017-] \tab  \textit{International Journal of Equity in Health}
+         \item[2019-] \tab   \textit{BMC Public Health}
+         \item[2019-] \tab   \textit{INQUARY}
+         
+    \end{tablist}
+	
+    \subsection*{学院服务}
+
+    \begin{tablist}
+    	
+    	\item[2019.11—2020.04]  \tab 四川大学华西公共卫生学院国际交流事务助理
+    
+    \end{tablist}
+	
+
+
+    \section*{编程与技能}
+
+    \subsection*{软件编程}
+
+    \begin{itemize}
+
+        \item \textbf{R}: 每日R使用者，熟练使用\textit{Rmarkdown}, \textit{ggplot2}, \textit{knitr}, \textit{dplyr}等
+        \item \textbf{Stata}: 熟练使用计量经济学模型
+        \item \textbf{SAS}: 了解SAS的基础使用
+        \item \textbf{\LaTeX}: 期刊印刷和书籍出版水准的文档排版
+
+    \end{itemize}
+
+    \subsection*{R包开发}
+    \begin{itemize}
+
+ 	\item \href{https://github.com/xiaojunlin/gaodemap}{\textbf{gaodemap}}: An R package for getting coordinates and locations via Gaode Map API. 
+
+    \end{itemize}
+
+    % display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        %\vspace{6em}
+        \vfill
+        Updated \monthyeardate\today
+    \end{center}
+
+
+\end{document}
